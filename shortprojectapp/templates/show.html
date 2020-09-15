@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table class="table table-striped">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Blood Group</th>
+        <th>Email</th>
+        <th>Contact</th>
+    </tr>
+    {% for i in donor_form %}
+    <tr>
+        <td>{{ i.donor_id }}</td>
+        <td>{{ i.donor_name }}</td>
+        <td>{{ i.donor_blood_group }}</td>
+        <td>{{ i.donor_email }}</td>
+        <td>{{ i.donor_contact }}</td>
+        <td>
+            <a class="btn btn-info" href="edit/{{ i.id }}">Edit</a>
+        </td>
+        <td>
+            <a class="btn btn-danger" href="delete/{{ i.id }}">Delete</a>
+        </td>
+    </tr>    
+    {% endfor %}
+</table>
+{%  endblock %}

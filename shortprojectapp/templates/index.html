@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="add" style="margin: auto;">
+    <form action="add" method="POST">
+        {% csrf_token%}
+        <table class="table">
+            <label>ID:</label>
+            <div>{{ form.donor_id }}</div>
+            <label>Name:</label>
+            <div>{{ form.donor_name }}</div>
+            <label>Blood Group:</label>
+            <div>{{ form.donor_blood_group }}</div>
+            <label>Email:</label>
+            <div>{{ form.donor_email }}</div>
+            <label>Contact:</label>
+            <div>{{ form.donor_contact }}</div>
+        </table>
+    
+        <div>
+            <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

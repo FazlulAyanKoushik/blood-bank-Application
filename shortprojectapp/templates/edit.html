@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="/update/{{ blood_donor.id }}" method="post">
+    {% csrf_token %}
+    <table class="table">
+        <tr>
+            <td>
+                <input type="text" name="donor_id" value="{{ blood_donor.donor_id }}" required >
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" name="donor_name" value="{{ blood_donor.donor_name }}" required >
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" name="donor_blood_group" value="{{ blood_donor.donor_blood_group }}" required >
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" name="donor_email" value="{{ blood_donor.donor_email }}" >
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" name="donor_contact" value="{{ blood_donor.donor_contact }}" required >
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit">Update</button>
+            </td>
+        </tr>
+    </table>
+
+</form>
+{% endblock %}
